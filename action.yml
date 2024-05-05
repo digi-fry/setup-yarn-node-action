@@ -1,0 +1,26 @@
+name: 'Setup Yarn and Node.js Action'
+description: 'Setup yarn cache and install dependencies'
+branding:
+  icon: 'package'
+  color: 'blue'
+
+inputs:
+  node-version:
+    description: 'Version of Node.js to setup'
+    required: true
+
+runs:
+  using: 'composite'
+
+  steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ inputs.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: 'yarn'
+
+    - name: Install dependencies
+      shell: bash
+      run: yarn install
