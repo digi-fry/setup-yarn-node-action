@@ -1,4 +1,4 @@
-# Setup PNPM and Node.js Action
+# Setup Yarn and Node.js Action
 
 This GitHub Action sets up a specific version of Node.js and Yarn, installs dependencies, and sets up a cache for Yarn.
 
